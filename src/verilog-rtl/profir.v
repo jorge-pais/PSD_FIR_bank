@@ -1,3 +1,5 @@
+`timescale 1ns/1ps;
+
 module profir(
     input                   clock, 
     input                   reset,
@@ -22,8 +24,21 @@ module profir(
     output signed [15:0]    dataout7,
 );
 
+// Assign all output to zeros
+assign coeffaddress = 6'd0;
+assign dataout0 = 16'd0;
+assign dataout1 = 16'd0;
+assign dataout2 = 16'd0;
+assign dataout3 = 16'd0;
+assign dataout4 = 16'd0;
+assign dataout5 = 16'd0;
+assign dataout6 = 16'd0;
+assign dataout7 = 16'd0;
+
+//
 reg [15:0] input_buffer [0:127]; // 128x1 array of 16 bit registers
-reg [5:0] controladdress; // Address to control main multiplexer and RAM
+reg [5:0] control_address; // Address to control main multiplexer and RAM
+reg [15:0] filter_output [0:7]; // 8x1 array of 16 but registers
 
 wire [31:0] sample_pairs [0:64];
 
@@ -33,12 +48,13 @@ begin
     begin
         for (i = 0; i < 128; i = i + 1) // Load the zero
             input_buffer[i] <= 16'd0;
-
     end
     else
     begin
         if(din_enable) // load the buffer
         begin
+            //coeffaddress <= 5'd0;
+
             for (i=127; i > 0; i = i + 1) // shift the buffer positions
                 input_buffer[i] <= input_buffer[i-1];
 
@@ -46,11 +62,10 @@ begin
 
             // pair the inputs for multiplexer
             for (i = 0; i < 64; i=i+1)
-                sample_pairs[i] = {input_buffer[2*i], input_buffer[2*i+1]};
+                sample_pairs[i] <= {input_buffer[2*i], input_buffer[2*i+1]};
 
-            coeffaddress <= 5'd0; // Set the initial address to load the first two coefficients from memory
+             // Set the initial address to load the first two coefficients from memory (?)
         end
-        
     end
 end
 endmodule
