@@ -1,7 +1,10 @@
-filePath = input("File to split: \n");
-file = open(filePath, 'r');
+import sys
+if(len(sys.argv) != 2):
+    sys.exit(-1);
 
-outputFile = open("splitCoefficient.hex", 'w');
+file = open(sys.argv[1], 'r');
+
+outputFile = open("split.hex", 'w');
 
 Lines = file.readlines();
 

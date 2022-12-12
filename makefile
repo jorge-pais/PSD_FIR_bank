@@ -5,7 +5,7 @@
 VC := iverilog
 VRUNTIME := vvp
 
-VFLAGS := -Wall
+VFLAGS := -Wall -t $(VRUNTIME)
 
 EXEC := profirTest
 EXEC_DIR := ./sim
