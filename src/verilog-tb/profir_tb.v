@@ -1,5 +1,5 @@
 /*
-Basic testbenck for the Profir module
+Basic testbench for the Profir module
 
 	jca@fe.up.pt, Nov 2022
 
@@ -62,7 +62,15 @@ begin
 	datain = 0;
 	// Generate the master clock:
 	forever #(CLOCK_PERIOD/2) clock = ~clock;
-end		
+end
+
+/* Output a waveform for gtkwave
+*/
+initial
+begin
+	$dumpfile("filterWaveforms.vcd");
+	$dumpvars(0, filter_bank_1);
+end
 
 // generate the reset signal (note this is active low)
 // Activate reset_n for 10 clock cycles (100 ns)
@@ -114,6 +122,8 @@ integer Coutsamples = -2; // Adjust the start value for this index
 // register loaded with the expected output data						  
 reg signed [15:0] goldendataout;
 
+reg failed = 0;
+
 always @(posedge datain_en)
 begin
 
@@ -136,8 +146,9 @@ begin
 	// INSERT HERE YOUR VERIFICATION PROCESS TO COMPARE THE dataout<0-7> 
 	// OUTPUTS WITH THE EXPECTED OUTPUT DATA  
 	
-	if(Csamples == 20) // Stop after reading 20 samples
-		$stop;
+	if(dataout0 != goldendataout)
+		failed = 1;
+
 	
 end
 

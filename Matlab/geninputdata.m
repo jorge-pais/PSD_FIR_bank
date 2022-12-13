@@ -1,3 +1,5 @@
+pkg load communications;
+
 clear all;
 
 % Output file:
@@ -67,5 +69,5 @@ for i=1:length(sig)
     end
 end
 
-fclose( fp );
+#fclose( fp );
 
