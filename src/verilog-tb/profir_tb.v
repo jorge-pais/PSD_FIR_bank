@@ -69,7 +69,7 @@ end
 initial
 begin
 	$dumpfile("filterWaveforms.vcd");
-	$dumpvars(0, filter_bank_1);
+	$dumpvars(0, profir_tb);
 end
 
 // generate the reset signal (note this is active low)

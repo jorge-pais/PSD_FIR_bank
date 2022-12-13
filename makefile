@@ -26,6 +26,6 @@ clean:
 	rm -f $(TARGET_EXEC)
 
 wave:
-	gtkwave ./sim/outputWaveforms.vcd &!
+	gtkwave ./sim/filterWaveforms.vcd &!
 
 .PHONY: clean

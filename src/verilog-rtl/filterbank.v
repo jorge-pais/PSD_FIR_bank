@@ -1,3 +1,17 @@
+/*
+ Filter bank toplevel module
+ 
+jca@fe.up.pt, Nov 2022
+
+	This Verilog code is property of University of Porto
+	Its utilization beyond the scope of the course Digital Systems Design
+	(Projeto de Sistemas Digitais) of the Master in Electrical 
+	and Computer Engineering requires explicit authorization from the author.
+ 
+Edited by:
+    Jorge Pais
+    Pedro Duarte
+*/
 `timescale 1ns/1ps
 
 module profir(
@@ -93,7 +107,7 @@ always @(posedge clock)
 begin
     if(reset) state = INIT;
     else state = nextState;
-
+    $display("-----RESULT: 0x%042b-----", calc_output[0]);
     $display("STATE: %02d, count: %02d", state, countAddress);
 
     // Load the sample registers
@@ -131,37 +145,38 @@ begin
         end
         RUN:
         begin
+            $display("Sample A: 0x%04H; Sample B: 0x%04H", sampleA, sampleB);
+            $display("filterCoefficients[%02d] 0x%05H -- 0x%05H", countAddress - 1, coeff0[17:0], coeff0[35:18]);
+
             /* We could do this with a single expression but then it would be
             required to do a wire array and to attach each coefficient input */
-            /* calc_output[0] <= calc_output[0] + (sampleA * $signed(coeff0[17:0])) + (sampleB * $signed(coeff0[35:18]));
+            calc_output[0] <= calc_output[0] + (sampleA * $signed(coeff0[17:0])) + (sampleB * $signed(coeff0[35:18]));
             calc_output[1] <= calc_output[1] + (sampleA * $signed(coeff1[17:0])) + (sampleB * $signed(coeff1[35:18]));
             calc_output[2] <= calc_output[2] + (sampleA * $signed(coeff2[17:0])) + (sampleB * $signed(coeff2[35:18]));
             calc_output[3] <= calc_output[3] + (sampleA * $signed(coeff3[17:0])) + (sampleB * $signed(coeff3[35:18]));
             calc_output[4] <= calc_output[4] + (sampleA * $signed(coeff4[17:0])) + (sampleB * $signed(coeff4[35:18]));
             calc_output[5] <= calc_output[5] + (sampleA * $signed(coeff5[17:0])) + (sampleB * $signed(coeff5[35:18]));
             calc_output[6] <= calc_output[6] + (sampleA * $signed(coeff6[17:0])) + (sampleB * $signed(coeff6[35:18]));
-            calc_output[7] <= calc_output[7] + (sampleA * $signed(coeff7[17:0])) + (sampleB * $signed(coeff7[35:18])); */
+            calc_output[7] <= calc_output[7] + (sampleA * $signed(coeff7[17:0])) + (sampleB * $signed(coeff7[35:18]));
 
-            calc_output[0] = calc_output[0] + (sampleA * coeff0[17:0]) + (sampleB * coeff0[35:18]);
+            /* calc_output[0] = calc_output[0] + (sampleA * coeff0[17:0]) + (sampleB * coeff0[35:18]);
             calc_output[1] = calc_output[1] + (sampleA * coeff1[17:0]) + (sampleB * coeff1[35:18]);
             calc_output[2] = calc_output[2] + (sampleA * coeff2[17:0]) + (sampleB * coeff2[35:18]);
             calc_output[3] = calc_output[3] + (sampleA * coeff3[17:0]) + (sampleB * coeff3[35:18]);
             calc_output[4] = calc_output[4] + (sampleA * coeff4[17:0]) + (sampleB * coeff4[35:18]);
             calc_output[5] = calc_output[5] + (sampleA * coeff5[17:0]) + (sampleB * coeff5[35:18]);
             calc_output[6] = calc_output[6] + (sampleA * coeff6[17:0]) + (sampleB * coeff6[35:18]);
-            calc_output[7] = calc_output[7] + (sampleA * coeff7[17:0]) + (sampleB * coeff7[35:18]);
+            calc_output[7] = calc_output[7] + (sampleA * coeff7[17:0]) + (sampleB * coeff7[35:18]); */
     
-            $display("Sample A: 0x%04H; Sample B: 0x%04H", sampleA, sampleB);
-            $display("filterCoefficients[%02d] 0x%05H -- 0x%05H", countAddress - 1, coeff0[17:0], coeff0[35:18]);
             countAddress <= countAddress + 1;
         end
         LOAD:
         begin
-            // Load the 'truncated' result into the output buffer
+            // the problem is here
             for(i = 0; i < 8; i = i + 1)
                 output_buffer[i] <= $signed(calc_output[i][31:16]);
 
-            $display("-----RESULT: 0x%016b-----", output_buffer[0]);
+            $display("-----RESULT: 0x%042b-----", calc_output[0]);
             //$display("Result: 0x%04h", calc_output[0]);
             // TODO: Load the outputs to a register
         end
