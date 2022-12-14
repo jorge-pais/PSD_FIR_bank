@@ -95,8 +95,7 @@ begin
         RUN: 
             if(countAddress <= 64) nextState = RUN;
             else nextState = LOAD;
-        LOAD: 
-            nextState = STOP;
+        LOAD: nextState = STOP;
         STOP:
             if(din_enable) nextState = START;
             else nextState = STOP;
