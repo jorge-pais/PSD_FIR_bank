@@ -106,7 +106,7 @@ always @(posedge clock)
 begin
     if(reset) state = INIT;
     else state = nextState;
-    $display("STATE: %02d, count: %02d", state, countAddress);
+    //$display("STATE: %02d, count: %02d", state, countAddress);
 
     // Load the sample registers
     sampleA <= muxOutA;
@@ -117,7 +117,7 @@ begin
         begin
             for (i = 0; i < 8; i = i +1)
             begin
-                calc_output[i] <= 42'd0; // Clear the output buffers
+                calc_output[i] <= 42'd0; // Clear both output buffers
                 output_buffer[i] <= 16'd0; 
             end
             for (i = 0; i < 128; i = i + 1)
@@ -143,8 +143,8 @@ begin
         end
         RUN:
         begin
-            $display("Sample A: 0x%04H; Sample B: 0x%04H", sampleA, sampleB);
-            $display("filterCoefficients[%02d] 0x%05H -- 0x%05H", countAddress - 1, coeff0[17:0], coeff0[35:18]);
+            /* $display("Sample A: 0x%04H; Sample B: 0x%04H", sampleA, sampleB);
+            $display("filterCoefficients[%02d] 0x%05H -- 0x%05H", countAddress - 1, coeff0[17:0], coeff0[35:18]); */
 
             /* We could do this with a single expression but then it would be
             required to do a wire array and to attach each coefficient input */
@@ -156,15 +156,6 @@ begin
             calc_output[5] <= calc_output[5] + (sampleA * $signed(coeff5[17:0])) + (sampleB * $signed(coeff5[35:18]));
             calc_output[6] <= calc_output[6] + (sampleA * $signed(coeff6[17:0])) + (sampleB * $signed(coeff6[35:18]));
             calc_output[7] <= calc_output[7] + (sampleA * $signed(coeff7[17:0])) + (sampleB * $signed(coeff7[35:18]));
-
-            /* calc_output[0] = calc_output[0] + (sampleA * coeff0[17:0]) + (sampleB * coeff0[35:18]);
-            calc_output[1] = calc_output[1] + (sampleA * coeff1[17:0]) + (sampleB * coeff1[35:18]);
-            calc_output[2] = calc_output[2] + (sampleA * coeff2[17:0]) + (sampleB * coeff2[35:18]);
-            calc_output[3] = calc_output[3] + (sampleA * coeff3[17:0]) + (sampleB * coeff3[35:18]);
-            calc_output[4] = calc_output[4] + (sampleA * coeff4[17:0]) + (sampleB * coeff4[35:18]);
-            calc_output[5] = calc_output[5] + (sampleA * coeff5[17:0]) + (sampleB * coeff5[35:18]);
-            calc_output[6] = calc_output[6] + (sampleA * coeff6[17:0]) + (sampleB * coeff6[35:18]);
-            calc_output[7] = calc_output[7] + (sampleA * coeff7[17:0]) + (sampleB * coeff7[35:18]); */
     
             countAddress <= countAddress + 1;
         end
@@ -176,7 +167,7 @@ begin
         STOP:
         begin 
             countAddress <= 0;
-            $display("Result: 0x%04h", output_buffer[0]);
+            //$display("Result: 0x%04h", output_buffer[0]);
         end
     endcase
 end
