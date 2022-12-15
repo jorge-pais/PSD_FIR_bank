@@ -106,7 +106,6 @@ always @(posedge clock)
 begin
     if(reset) state = INIT;
     else state = nextState;
-    $display("-----RESULT: 0x%042b-----", calc_output[0]);
     $display("STATE: %02d, count: %02d", state, countAddress);
 
     // Load the sample registers
@@ -171,15 +170,14 @@ begin
         end
         LOAD:
         begin
-            // the problem is here
             for(i = 0; i < 8; i = i + 1)
                 output_buffer[i] <= $signed(calc_output[i][31:16]);
-
-            $display("-----RESULT: 0x%042b-----", calc_output[0]);
-            //$display("Result: 0x%04h", calc_output[0]);
-            // TODO: Load the outputs to a register
         end
-        STOP: countAddress <= 0;
+        STOP:
+        begin 
+            countAddress <= 0;
+            $display("Result: 0x%04h", output_buffer[0]);
+        end
     endcase
 end
 endmodule
