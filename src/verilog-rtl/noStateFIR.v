@@ -41,22 +41,23 @@ reg [6:0] countAddress = 0; // Extra black magic bit
 // 6 least significant bits
 assign coeffaddress = countAddress[5:0]; 
 
-// Assign all output to zeros
-assign dataout0 = 16'd0;
-assign dataout1 = 16'd0;
-assign dataout2 = 16'd0;
-assign dataout3 = 16'd0;
-assign dataout4 = 16'd0;
-assign dataout5 = 16'd0;
-assign dataout6 = 16'd0;
-assign dataout7 = 16'd0;
+reg signed [15:0] output_buffer [7:0]; // 8x1 x 16bit
+
+assign dataout0 = output_buffer[0];
+assign dataout1 = output_buffer[1];
+assign dataout2 = output_buffer[2];
+assign dataout3 = output_buffer[3];
+assign dataout4 = output_buffer[4];
+assign dataout5 = output_buffer[5];
+assign dataout6 = output_buffer[6];
+assign dataout7 = output_buffer[7];
 
 /*
 Since the output samples are calculated by the convoluting the 18 bit
 filter coefficients and the 16 bit samples of the filter we now that in 
 the worst case scenario, the resulting output after 128 clocks is 43 bits
 */
-reg [42:0] calc_output [0:7]; // 8x1 array of 43 bit registers
+reg [41:0] calc_output [0:7]; // 8x1 array of 41 bit registers
 reg [15:0] input_buffer [0:127]; // 128x1 array of 16 bit registers
 
 reg [15:0] sampleA;
@@ -68,11 +69,10 @@ reg started = 0;
 grouped by the even and odd samples.
 Posedge already loads the registers with the multiplexer output
 */
-always @(posedge clock)
-begin
-    sampleA = input_buffer[(countAddress << 1)]; // Even sample
-    sampleB = input_buffer[(countAddress << 1) + 1]; // Odd sample
-end
+wire signed [15:0] muxOutA;
+wire signed [15:0] muxOutB;
+assign muxOutA = input_buffer[(countAddress << 1)]; // Even sample
+assign muxOutB = input_buffer[(countAddress << 1) + 1]; // Odd sample
 
 integer i;
 
@@ -92,12 +92,16 @@ begin
     end
     else
     begin
+        sampleA <= input_buffer[(countAddress << 1)]; // Even sample
+        sampleB <= input_buffer[(countAddress << 1) + 1]; // Odd sample
         if(din_enable) // The first iteration
         begin
-            $display("Datain_en received!");
             // reset the calculation outputs
             for (i = 0; i < 8; i = i + 1)
-                calc_output[i] <= 43'd0;
+            begin
+                calc_output[i] <= 42'd0;
+                output_buffer[i] <= 16'd0;
+            end
 
             // load the buffer
             for (i = 127; i > 0; i = i - 1) // shift the buffer positions
@@ -106,7 +110,6 @@ begin
 
             started = 1;
             countAddress = 0;
-            $display("Sample A: 0x%4H; Sample B: 0x%4H", sampleA, sampleB);
         end
         else
             if(started) // Every other cycle
@@ -125,14 +128,16 @@ begin
                     calc_output[6] <= calc_output[6] + sampleA*coeff6[35:18] + sampleB*coeff6[17:0];
                     calc_output[7] <= calc_output[7] + sampleA*coeff7[35:18] + sampleB*coeff7[17:0];
                 
-                    $display("Sample A: 0x%4H; Sample B: 0x%4H", sampleA, sampleB);
-                    $display("filterCoefficients[%2d] 0x%6H -- 0x%6H", countAddress - 1, coeff0[35:18], coeff0[17:0]);
+                    //$display("Sample A: 0x%4H; Sample B: 0x%4H", sampleA, sampleB);
+                    //$display("filterCoefficients[%2d] 0x%6H -- 0x%6H", countAddress - 1, coeff0[35:18], coeff0[17:0]);
                 end
                 else
                 begin
                     // load the most significant 16 bits to the output
-                    $display("calculations finished");
                     started = 0;
+
+                    for(i = 0; i < 8; i = i + 1)
+                        output_buffer[i] <= $signed(calc_output[i][31:16]);
                 end
             end
 
