@@ -1,3 +1,6 @@
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 

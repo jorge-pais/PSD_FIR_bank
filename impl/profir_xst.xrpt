@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Mon Dec 19 13:40:44 2022">
+  <application stringID="Xst" timeStamp="Mon Dec 19 15:45:11 2022">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -60,7 +60,7 @@
       <item DEFAULT="" label="-p" stringID="XST_P" value="xc7a200t-1-ffg1156"/>
       <item DEFAULT="" label="-top" stringID="XST_TOP" value="profir"/>
       <item DEFAULT="Speed" label="-opt_mode" stringID="XST_OPTMODE" value="Speed"/>
-      <item DEFAULT="1" label="-opt_level" stringID="XST_OPTLEVEL" value="1"/>
+      <item DEFAULT="1" label="-opt_level" stringID="XST_OPTLEVEL" value="2"/>
       <item DEFAULT="No" label="-power" stringID="XST_POWER" value="NO"/>
       <item DEFAULT="No" label="-iuc" stringID="XST_IUC" value="NO"/>
       <item DEFAULT="No" label="-keep_hierarchy" stringID="XST_KEEPHIERARCHY" value="No"/>

@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Reading design: profir.prj
@@ -84,7 +84,7 @@ Equivalent register Removal        : NO
 
 ---- General Options
 Optimization Goal                  : Speed
-Optimization Effort                : 1
+Optimization Effort                : 2
 Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
@@ -451,13 +451,13 @@ clock          |    5.146|    7.267|    2.544|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 81.00 secs
-Total CPU time to Xst completion: 77.45 secs
+Total REAL time to Xst completion: 83.00 secs
+Total CPU time to Xst completion: 79.04 secs
  
 --> 
 
 
-Total memory usage is 730376 kilobytes
+Total memory usage is 730476 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    8 (   0 filtered)

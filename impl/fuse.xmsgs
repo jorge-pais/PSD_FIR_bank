@@ -5,5 +5,26 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 58: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 67: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 76: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 85: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 94: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 103: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1016" delta="unknown" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 112: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
+</msg>
+
 </messages>
 

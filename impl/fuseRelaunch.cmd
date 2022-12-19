@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir_isim_beh.exe" -prj "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir_beh.prj" "work.statefir" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir_tb_isim_beh.exe" -prj "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir_tb_beh.prj" "work.profir_tb" "work.glbl" 
