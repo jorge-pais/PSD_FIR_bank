@@ -64,7 +64,7 @@ begin
 	for(i=0; i<MAXSAMPLES; i=i+1)
 		if ( dataoutbuffer_0[i] !== 16'dx )
 		Nsamplesout = i;
-	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_0 );
+	$display("Read %d samples from ocautput file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_0 );
 
 	// Load output filter 1
 	$readmemh( OUTPUT_GOLDEN_DATAFILE_1, dataoutbuffer_1 );
@@ -236,37 +236,37 @@ begin
 		
 	// INSERT HERE YOUR VERIFICATION PROCESS TO COMPARE THE dataout<0-7> 
 	// OUTPUTS WITH THE EXPECTED OUTPUT DATA
-	if(^goldendataout_0 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_0 !== 1'bX) // Check if any bit is X or Z
 		if(dataout0 !== goldendataout_0)
 			mismatch <= mismatch + 1;
 		else
 			match <= match + 1;
 	
-	if(^goldendataout_1 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_1 !== 1'bX)
 		if(dataout1 !== goldendataout_1)
 			mismatch <= mismatch + 1;
 		else
 			match <= match + 1;	
 
-	if(^goldendataout_2 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_2 !== 1'bX)
 		if(dataout2 !== goldendataout_2)
 			mismatch <= mismatch + 1;
 		else
 			match <= match + 1;
 
-	if(^goldendataout_3 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_3 !== 1'bX)
 		if(dataout3 !== goldendataout_3)
 			mismatch <= mismatch + 1;
 		else
 			match <= match + 1;
 
-	if(^goldendataout_4 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_4 !== 1'bX)
 		if(dataout4 !== goldendataout_4)
 			mismatch <= mismatch + 1;
 		else
 			match <= match + 1;
 
-	if(^goldendataout_5 !== 1'bX) // Check if any bit if X or Z
+	if(^goldendataout_5 !== 1'bX)
 		if(dataout5 !== goldendataout_5)
 			mismatch <= mismatch + 1;
 		else
@@ -285,7 +285,7 @@ begin
 			match <= match + 1;
 end
 
-/* Output a waveform for gtkwave
+/* Output a waveform for use with iverilog + gtkwave
 this block must be commented before utilizing any
 other verilog synthesis application
 */
