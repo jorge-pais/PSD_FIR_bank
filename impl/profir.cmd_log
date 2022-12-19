@@ -4,3 +4,7 @@ xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn 
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
 xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
+xst -intstyle ise -ifn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.xst" -ofn "/home/ise/ISE_shared/PSD_FIR_bank/impl/profir.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc /home/ise/ISE_shared/PSD_FIR_bank/src/data/s6base-artix7.ucf -p xc7a200t-ffg1156-1 profir.ngc profir.ngd  
+map -intstyle ise -p xc7a200t-ffg1156-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o profir_map.ncd profir.ngd profir.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml profir_preroute.twx profir_map.ncd -o profir_preroute.twr profir.pcf -ucf /home/ise/ISE_shared/PSD_FIR_bank/src/data/s6base-artix7.ucf 

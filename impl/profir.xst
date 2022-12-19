@@ -6,7 +6,7 @@ run
 -ofmt NGC
 -p xc7a200t-1-ffg1156
 -top profir
--opt_mode Speed
+-opt_mode Area
 -opt_level 2
 -power NO
 -iuc NO
