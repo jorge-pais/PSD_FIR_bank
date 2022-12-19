@@ -215,8 +215,8 @@ begin
 	//if(Csamples == 20) 
 	begin
 
-		if(mismatch == 0)
-			$display("[TEST RESULT] All %d samples match", match);
+		if(mismatch === 0)
+			$display("[TEST RESULT] All %0d samples match!", match);
 		else
 			$display("[TEST RESULT] %d samples differ from expected!", mismatch);
 			
