@@ -126,6 +126,7 @@ reg signed [15:0] goldendataout;
 
 reg failed = 0;
 integer mismatch = 0;
+integer match = 0;
 
 always @(posedge datain_en)
 begin
@@ -141,8 +142,8 @@ begin
 	//if(Csamples == 20) 
 	begin
 
-		if(mismatch == 0)
-			$display("[TEST RESULT] Both vectors match!");
+		if(mismatch === 0)
+			$display("[TEST RESULT] All %0d samples match!", match);
 		else
 			$display("[TEST RESULT] %d samples differ from expected!", mismatch);
 		repeat(1000)			// wait more 1000 clocks and stop simulation
@@ -154,8 +155,11 @@ begin
 		
 	// INSERT HERE YOUR VERIFICATION PROCESS TO COMPARE THE dataout<0-7> 
 	// OUTPUTS WITH THE EXPECTED OUTPUT DATA  
-	if(dataout0 !== goldendataout)
-		mismatch <= mismatch + 1;
+	if(^goldendataout !== 1'hX)
+		if(dataout2 !== goldendataout)
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
 
 end
 
