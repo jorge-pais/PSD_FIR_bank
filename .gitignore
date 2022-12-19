@@ -1,3 +1,4 @@
 build/
 sim/work/
 sim/filterWaveforms.vcd
+sim/profirTest
