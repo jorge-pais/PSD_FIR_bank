@@ -136,9 +136,10 @@ begin
 	Coutsamples = Coutsamples + 1;
 	
 	if ( Csamples == Nsamples ) // end of the input sample vector
+	//if(Csamples == 20) 
 	begin
 
-		if(failed == 0)
+		if(mismatch == 0)
 			$display("[TEST RESULT] Both vectors match!");
 		else
 			$display("[TEST RESULT] %d samples differ from expected!", mismatch);
@@ -151,11 +152,9 @@ begin
 		
 	// INSERT HERE YOUR VERIFICATION PROCESS TO COMPARE THE dataout<0-7> 
 	// OUTPUTS WITH THE EXPECTED OUTPUT DATA  
-	if(dataout0 != goldendataout)
-	begin
+	if(dataout0 !== goldendataout)
 		mismatch <= mismatch + 1;
-		failed <= 1;
-	end
+
 end
 
 	//--------------------------------------------------------------------------------

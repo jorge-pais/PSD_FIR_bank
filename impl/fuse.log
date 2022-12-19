@@ -1,0 +1,25 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_isim_beh.exe -prj /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_beh.prj work.profir_tb work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/statefir.v" into library work
+Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/../src/verilog-rtl/memory8bank.v" into library work
+Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/filterbank.v" into library work
+Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/../src/verilog-tb/profir_tb.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 82760 KB
+Fuse CPU Usage: 1000 ms
+Compiling module memory8bank
+Compiling module statefir
+Compiling module profir
+Compiling module profir_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 5 Verilog Units
+Built simulation executable /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_isim_beh.exe
+Fuse Memory Usage: 1167356 KB
+Fuse CPU Usage: 1020 ms
+GCC CPU Usage: 650 ms

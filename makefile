@@ -12,10 +12,10 @@ EXEC_DIR := ./sim
 
 TARGET_EXEC := $(EXEC_DIR)/$(EXEC)
 
-SRC := $(shell find ./src/verilog-rtl -name '*.v')
+SRC_RTL := $(shell find ./src/verilog-rtl -name '*.v')
 SRC_TB := $(shell find ./src/verilog-tb -name '*.v')
 
-$(TARGET_EXEC): $(SRC) $(SRC_TB)
+$(TARGET_EXEC): $(SRC_RTL) $(SRC_TB)
 	$(VC) $^ $(VFLAGS) -o $(TARGET_EXEC)
 
 # -n flag causes the runtime to end upon $stop 
