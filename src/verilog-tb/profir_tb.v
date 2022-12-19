@@ -65,12 +65,14 @@ begin
 end
 
 /* Output a waveform for gtkwave
+this block must be commented before utilizing any
+other verilog synthesis application
 */
-initial
+/* initial
 begin
 	$dumpfile("filterWaveforms.vcd");
 	$dumpvars(0, profir_tb);
-end
+end */
 
 // generate the reset signal (note this is active low)
 // Activate reset_n for 10 clock cycles (100 ns)
