@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: profir.prj
@@ -80,11 +80,11 @@ Use Clock Enable                   : Auto
 Use Synchronous Set                : Auto
 Use Synchronous Reset              : Auto
 Pack IO Registers into IOBs        : Auto
-Equivalent register Removal        : YES
+Equivalent register Removal        : NO
 
 ---- General Options
 Optimization Goal                  : Speed
-Optimization Effort                : 2
+Optimization Effort                : 1
 Power Reduction                    : NO
 Keep Hierarchy                     : No
 Netlist Hierarchy                  : As_Optimized
@@ -108,38 +108,46 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/statefir.v" into library work
+Analyzing Verilog file "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir.v" into library work
 Parsing module <statefir>.
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/filterbank.v" into library work
+Analyzing Verilog file "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" into library work
 Parsing module <profir>.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 58: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 67: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 76: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 85: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 94: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 103: Port coeffaddress is not connected to this instance
+WARNING:HDLCompiler:1016 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 112: Port coeffaddress is not connected to this instance
 
 Elaborating module <profir>.
 
 Elaborating module <statefir>.
+WARNING:HDLCompiler:413 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir.v" Line 117: Result of 8-bit expression is truncated to fit in 7-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <profir>.
-    Related source file is "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/filterbank.v".
-WARNING:Xst:647 - Input <coeff1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff3> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff4> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff5> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff6> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <coeff7> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Related source file is "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v".
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 58: Output port <coeffaddress> of the instance <fir1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 67: Output port <coeffaddress> of the instance <fir2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 76: Output port <coeffaddress> of the instance <fir3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 85: Output port <coeffaddress> of the instance <fir4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 94: Output port <coeffaddress> of the instance <fir5> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 103: Output port <coeffaddress> of the instance <fir6> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" line 112: Output port <coeffaddress> of the instance <fir7> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <profir> synthesized.
 
 Synthesizing Unit <statefir>.
-    Related source file is "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/statefir.v".
+    Related source file is "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir.v".
         INIT = 3'b000
         START = 3'b001
         SET1 = 3'b100
@@ -178,27 +186,27 @@ Unit <statefir> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# Multipliers                                          : 2
- 18x16-bit multiplier                                  : 2
-# Adders/Subtractors                                   : 4
- 42-bit adder                                          : 2
- 7-bit adder                                           : 1
- 8-bit adder                                           : 1
-# Registers                                            : 10
- 16-bit register                                       : 3
- 2048-bit register                                     : 1
- 3-bit register                                        : 2
- 34-bit register                                       : 2
- 42-bit register                                       : 1
- 7-bit register                                        : 1
-# Comparators                                          : 1
- 7-bit comparator lessequal                            : 1
-# Multiplexers                                         : 14
- 16-bit 128-to-1 multiplexer                           : 2
- 16-bit 2-to-1 multiplexer                             : 1
- 3-bit 2-to-1 multiplexer                              : 7
- 42-bit 2-to-1 multiplexer                             : 1
- 7-bit 2-to-1 multiplexer                              : 3
+# Multipliers                                          : 16
+ 18x16-bit multiplier                                  : 16
+# Adders/Subtractors                                   : 32
+ 42-bit adder                                          : 16
+ 7-bit adder                                           : 8
+ 8-bit adder                                           : 8
+# Registers                                            : 80
+ 16-bit register                                       : 24
+ 2048-bit register                                     : 8
+ 3-bit register                                        : 16
+ 34-bit register                                       : 16
+ 42-bit register                                       : 8
+ 7-bit register                                        : 8
+# Comparators                                          : 8
+ 7-bit comparator lessequal                            : 8
+# Multiplexers                                         : 112
+ 16-bit 128-to-1 multiplexer                           : 16
+ 16-bit 2-to-1 multiplexer                             : 8
+ 3-bit 2-to-1 multiplexer                              : 56
+ 42-bit 2-to-1 multiplexer                             : 8
+ 7-bit 2-to-1 multiplexer                              : 24
 
 =========================================================================
 
@@ -211,53 +219,27 @@ Synthesizing (advanced) Unit <statefir>.
 	Multiplier <Mmult_sampleB[15]_coeff[35]_MuLt_15_OUT> in block <statefir> and adder/subtractor <Madd_calc_output[41]_aux_calcB[33]_add_17_OUT> in block <statefir> are combined into a MAC<Maddsub_sampleB[15]_coeff[35]_MuLt_15_OUT>.
 	The following registers are also absorbed by the MAC: <aux_calcB> in block <statefir>.
 	Multiplier <Mmult_sampleA[15]_coeff[17]_MuLt_14_OUT> in block <statefir> and adder/subtractor <Madd_n0080> in block <statefir> are combined into a MAC<Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT>.
-	The following registers are also absorbed by the MAC: <aux_calcA> in block <statefir>, <calc_output> in block <statefir>.
+	The following registers are also absorbed by the MAC: <aux_calcA> in block <statefir>.
 Unit <statefir> synthesized (advanced).
-WARNING:Xst:2677 - Node <calc_output_0> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_1> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_2> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_3> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_4> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_5> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_6> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_7> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_8> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_9> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_10> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_11> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_12> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_13> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_14> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_15> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_32> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_33> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_34> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_35> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_36> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_37> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_38> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_39> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_40> of sequential type is unconnected in block <statefir>.
-WARNING:Xst:2677 - Node <calc_output_41> of sequential type is unconnected in block <statefir>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# MACs                                                 : 2
- 18x16-to-42-bit MAC                                   : 2
-# Adders/Subtractors                                   : 2
- 7-bit adder                                           : 2
-# Registers                                            : 2125
- Flip-Flops                                            : 2125
-# Comparators                                          : 1
- 7-bit comparator lessequal                            : 1
-# Multiplexers                                         : 44
- 1-bit 128-to-1 multiplexer                            : 32
- 16-bit 2-to-1 multiplexer                             : 1
- 3-bit 2-to-1 multiplexer                              : 7
- 42-bit 2-to-1 multiplexer                             : 1
- 7-bit 2-to-1 multiplexer                              : 3
+# MACs                                                 : 16
+ 18x16-to-42-bit MAC                                   : 16
+# Adders/Subtractors                                   : 16
+ 7-bit adder                                           : 16
+# Registers                                            : 17208
+ Flip-Flops                                            : 17208
+# Comparators                                          : 8
+ 7-bit comparator lessequal                            : 8
+# Multiplexers                                         : 352
+ 1-bit 128-to-1 multiplexer                            : 256
+ 16-bit 2-to-1 multiplexer                             : 8
+ 3-bit 2-to-1 multiplexer                              : 56
+ 42-bit 2-to-1 multiplexer                             : 8
+ 7-bit 2-to-1 multiplexer                              : 24
 
 =========================================================================
 
@@ -271,7 +253,7 @@ Optimizing unit <statefir> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block profir, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block profir, actual ratio is 23.
 
 Final Macro Processing ...
 
@@ -279,8 +261,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2093
- Flip-Flops                                            : 2093
+# Registers                                            : 16744
+ Flip-Flops                                            : 16744
 
 =========================================================================
 
@@ -303,25 +285,25 @@ Top Level Output File Name         : profir.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2803
+# BELS                             : 22410
 #      GND                         : 1
-#      LUT2                        : 45
-#      LUT3                        : 2069
-#      LUT4                        : 5
-#      LUT5                        : 5
-#      LUT6                        : 677
+#      LUT2                        : 367
+#      LUT3                        : 16545
+#      LUT4                        : 40
+#      LUT5                        : 40
+#      LUT6                        : 5416
 #      VCC                         : 1
-# FlipFlops/Latches                : 2093
-#      FD                          : 3
-#      FDE                         : 2087
-#      FDE_1                       : 3
+# FlipFlops/Latches                : 16744
+#      FD                          : 24
+#      FDE                         : 16696
+#      FDE_1                       : 24
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 76
-#      IBUF                        : 54
-#      OBUF                        : 22
-# DSPs                             : 2
-#      DSP48E1                     : 2
+# IO Buffers                       : 440
+#      IBUF                        : 306
+#      OBUF                        : 134
+# DSPs                             : 16
+#      DSP48E1                     : 16
 
 Device utilization summary:
 ---------------------------
@@ -330,24 +312,24 @@ Selected Device : 7a200tffg1156-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2093  out of  269200     0%  
- Number of Slice LUTs:                 2801  out of  134600     2%  
-    Number used as Logic:              2801  out of  134600     2%  
+ Number of Slice Registers:           16744  out of  269200     6%  
+ Number of Slice LUTs:                22408  out of  134600    16%  
+    Number used as Logic:             22408  out of  134600    16%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2801
-   Number with an unused Flip Flop:     708  out of   2801    25%  
-   Number with an unused LUT:             0  out of   2801     0%  
-   Number of fully used LUT-FF pairs:  2093  out of   2801    74%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:  22408
+   Number with an unused Flip Flop:    5664  out of  22408    25%  
+   Number with an unused LUT:             0  out of  22408     0%  
+   Number of fully used LUT-FF pairs: 16744  out of  22408    74%  
+   Number of unique control sets:        41
 
 IO Utilization: 
  Number of IOs:                         441
- Number of bonded IOBs:                  77  out of    500    15%  
+ Number of bonded IOBs:                 441  out of    500    88%  
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
- Number of DSP48E1s:                      2  out of    740     0%  
+ Number of DSP48E1s:                     16  out of    740     2%  
 
 ---------------------------
 Partition Resource Summary:
@@ -370,7 +352,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock                              | BUFGP                  | 2095  |
+clock                              | BUFGP                  | 16760 |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -381,8 +363,8 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 5.268ns (Maximum Frequency: 189.823MHz)
-   Minimum input arrival time before clock: 2.438ns
+   Minimum period: 5.498ns (Maximum Frequency: 181.882MHz)
+   Minimum input arrival time before clock: 2.960ns
    Maximum output required time after clock: 1.133ns
    Maximum combinational path delay: No path found
 
@@ -392,51 +374,51 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock'
-  Clock period: 5.268ns (frequency: 189.823MHz)
-  Total number of paths / destination ports: 15783 / 4280
+  Clock period: 5.498ns (frequency: 181.882MHz)
+  Total number of paths / destination ports: 126264 / 34240
 -------------------------------------------------------------------------
-Delay:               2.634ns (Levels of Logic = 2)
-  Source:            fir0/nextState_1 (FF)
-  Destination:       fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
+Delay:               2.749ns (Levels of Logic = 2)
+  Source:            fir7/nextState_1 (FF)
+  Destination:       fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
   Source Clock:      clock falling
   Destination Clock: clock rising
 
-  Data Path: fir0/nextState_1 to fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
+  Data Path: fir7/nextState_1 to fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE_1:C->Q           29   0.484   0.573  fir0/nextState_1 (fir0/nextState_1)
-     LUT2:I1->O           44   0.124   0.691  fir0/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir0/nextState[2]_GND_2_o_mux_13_OUT<1>)
-     LUT2:I0->O            2   0.124   0.405  fir0/Mmux__n0134181 (fir0/_n0146<11>)
-     DSP48E1:C31               0.233          fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
+     FDE_1:C->Q           29   0.484   0.688  fir7/nextState_1 (fir7/nextState_1)
+     LUT2:I0->O           44   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
+     LUT2:I0->O            2   0.124   0.405  fir7/Mmux__n01341241 (fir7/_n0146<26>)
+     DSP48E1:C16               0.233          fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
     ----------------------------------------
-    Total                      2.634ns (0.965ns logic, 1.669ns route)
-                                       (36.6% logic, 63.4% route)
+    Total                      2.749ns (0.965ns logic, 1.784ns route)
+                                       (35.1% logic, 64.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 6247 / 4262
+  Total number of paths / destination ports: 49983 / 34096
 -------------------------------------------------------------------------
-Offset:              2.438ns (Levels of Logic = 3)
+Offset:              2.960ns (Levels of Logic = 3)
   Source:            reset (PAD)
-  Destination:       fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
+  Destination:       fir6/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
   Destination Clock: clock rising
 
-  Data Path: reset to fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
+  Data Path: reset to fir6/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          2079   0.001   0.860  reset_IBUF (reset_IBUF)
-     LUT2:I0->O           44   0.124   0.691  fir0/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir0/nextState[2]_GND_2_o_mux_13_OUT<1>)
-     LUT2:I0->O            2   0.124   0.405  fir0/Mmux__n0134181 (fir0/_n0146<11>)
-     DSP48E1:C31               0.233          fir0/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
+     IBUF:I->O          16625   0.001   1.382  reset_IBUF (reset_IBUF)
+     LUT2:I1->O           44   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
+     LUT2:I0->O            2   0.124   0.405  fir7/Mmux__n01341241 (fir7/_n0146<26>)
+     DSP48E1:C16               0.233          fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
     ----------------------------------------
-    Total                      2.438ns (0.482ns logic, 1.956ns route)
-                                       (19.8% logic, 80.2% route)
+    Total                      2.960ns (0.482ns logic, 2.478ns route)
+                                       (16.3% logic, 83.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
-  Total number of paths / destination ports: 22 / 22
+  Total number of paths / destination ports: 134 / 134
 -------------------------------------------------------------------------
 Offset:              1.133ns (Levels of Logic = 1)
   Source:            fir0/countAddress_1 (FF)
@@ -463,21 +445,21 @@ Clock to Setup on destination clock clock
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock          |    5.146|    7.152|    2.544|         |
+clock          |    5.146|    7.267|    2.544|         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.71 secs
+Total REAL time to Xst completion: 81.00 secs
+Total CPU time to Xst completion: 77.45 secs
  
 --> 
 
 
-Total memory usage is 518580 kilobytes
+Total memory usage is 730376 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   33 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
 

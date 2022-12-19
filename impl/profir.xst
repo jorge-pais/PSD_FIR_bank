@@ -7,7 +7,7 @@ run
 -p xc7a200t-1-ffg1156
 -top profir
 -opt_mode Speed
--opt_level 2
+-opt_level 1
 -power NO
 -iuc NO
 -keep_hierarchy No
@@ -48,5 +48,5 @@ run
 -use_sync_set Auto
 -use_sync_reset Auto
 -iob Auto
--equivalent_register_removal YES
+-equivalent_register_removal NO
 -slice_utilization_ratio_maxmargin 5

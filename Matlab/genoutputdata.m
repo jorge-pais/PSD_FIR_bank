@@ -1,6 +1,6 @@
 inputdatafile = '../simdata/datain.hex';
-inputcoefficients = '../simdata/coefficients0.hex';
-outputgoldenfile = '../simdata/dataout.hex';
+inputcoefficients = '../simdata/coefficients7.hex';
+outputgoldenfile = '../simdata/dataout7.hex';
 
 Nfracbits = 16;
 

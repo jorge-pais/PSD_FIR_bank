@@ -30,7 +30,6 @@
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="profir.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="profir.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="profir.ngc"/>
-    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGR" xil_pn:name="profir.ngr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="profir.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="profir.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="profir.syr"/>
@@ -38,112 +37,93 @@
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="profir_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="profir_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="profir_summary.html"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="profir_tb_beh.prj"/>
-    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="profir_tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="profir_tb_isim_beh.wdb"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="profir_tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="profir_xst.xrpt"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="statefir_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="statefir_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="statefir_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1671415055" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1671415055">
+    <transform xil_pn:end_ts="1671459233" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671415648" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1671415648">
+    <transform xil_pn:end_ts="1671459233" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../src/verilog-rtl/memory8bank.v"/>
       <outfile xil_pn:name="../src/verilog-tb/profir_tb.v"/>
       <outfile xil_pn:name="filterbank.v"/>
       <outfile xil_pn:name="statefir.v"/>
     </transform>
-    <transform xil_pn:end_ts="1671415060" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="7913337831671413278" xil_pn:start_ts="1671415060">
+    <transform xil_pn:end_ts="1671459233" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4404032246409581177" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671415060" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="2123691183100715324" xil_pn:start_ts="1671415060">
+    <transform xil_pn:end_ts="1671459233" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="6869659869779188247" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671415060" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5913370837559099752" xil_pn:start_ts="1671415060">
+    <transform xil_pn:end_ts="1671459233" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-5913370837559099752" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671415648" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1671415648">
+    <transform xil_pn:end_ts="1671459233" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="../src/verilog-rtl/memory8bank.v"/>
       <outfile xil_pn:name="../src/verilog-tb/profir_tb.v"/>
       <outfile xil_pn:name="filterbank.v"/>
       <outfile xil_pn:name="statefir.v"/>
     </transform>
-    <transform xil_pn:end_ts="1671438052" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-8826149451129421045" xil_pn:start_ts="1671438050">
+    <transform xil_pn:end_ts="1671459235" xil_pn:in_ck="6223673856614283420" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-4622937181357795967" xil_pn:start_ts="1671459233">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
-      <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="profir_tb_beh.prj"/>
-      <outfile xil_pn:name="profir_tb_isim_beh.exe"/>
+      <outfile xil_pn:name="statefir_beh.prj"/>
+      <outfile xil_pn:name="statefir_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1671438052" xil_pn:in_ck="-4867631472111672458" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="5054066463007332174" xil_pn:start_ts="1671438052">
+    <transform xil_pn:end_ts="1671459235" xil_pn:in_ck="5475471221254179185" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2141292130230177596" xil_pn:start_ts="1671459235">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="profir_tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="statefir_isim_beh.wdb"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1341607319466432519" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="1341607319466432519" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-5913370837559099752" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-5913370837559099752" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="8161575986985350569" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="8161575986985350569" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-8690316307649219368" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_SubProjectPreToStructuralProxy" xil_pn:prop_ck="-8690316307649219368" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671413401" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="4868201239751485410" xil_pn:start_ts="1671413401">
+    <transform xil_pn:end_ts="1671451572" xil_pn:name="TRAN_platgen" xil_pn:prop_ck="4868201239751485410" xil_pn:start_ts="1671451572">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671414900" xil_pn:in_ck="567568674981643180" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-2476787749197935528" xil_pn:start_ts="1671414881">
+    <transform xil_pn:end_ts="1671457326" xil_pn:in_ck="567568674981643180" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="789119926622156620" xil_pn:start_ts="1671457242">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

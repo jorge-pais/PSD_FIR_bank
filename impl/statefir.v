@@ -114,7 +114,7 @@ begin
             aux_calcA <= sampleA * $signed(coeff[17:0]); // Pipe line the slower multiplications
             aux_calcB <= sampleB * $signed(coeff[35:18]);
     
-            countAddress <= {countAddress + 7'h1};
+            countAddress <= countAddress + 1;
         end
         LOAD:
         begin

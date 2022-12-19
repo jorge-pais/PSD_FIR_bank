@@ -1,26 +1,19 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_isim_beh.exe -prj /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_beh.prj work.profir_tb work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/ise/ISE_shared/PSD_FIR_bank/impl/statefir_isim_beh.exe -prj /home/ise/ISE_shared/PSD_FIR_bank/impl/statefir_beh.prj work.statefir work.glbl 
 ISim P.20131013 (signature 0xfbc00daa)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/statefir.v" into library work
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/../src/verilog-rtl/memory8bank.v" into library work
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/filterbank.v" into library work
-Analyzing Verilog file "/home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/../src/verilog-tb/profir_tb.v" into library work
+Analyzing Verilog file "/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 82760 KB
-Fuse CPU Usage: 970 ms
-Compiling module memory8bank
+Fuse Memory Usage: 94960 KB
+Fuse CPU Usage: 560 ms
 Compiling module statefir
-Compiling module profir
-Compiling module profir_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
-Compiled 5 Verilog Units
-Built simulation executable /home/jorgep/OneDrive/Faculdade/Mestrado/PSD/labs/project2/impl/profir_tb_isim_beh.exe
-Fuse Memory Usage: 1167352 KB
-Fuse CPU Usage: 990 ms
-GCC CPU Usage: 610 ms
+Compiled 2 Verilog Units
+Built simulation executable /home/ise/ISE_shared/PSD_FIR_bank/impl/statefir_isim_beh.exe
+Fuse Memory Usage: 98056 KB
+Fuse CPU Usage: 570 ms
+GCC CPU Usage: 260 ms

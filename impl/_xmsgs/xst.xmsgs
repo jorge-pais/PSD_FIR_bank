@@ -5,103 +5,49 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff1</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 58: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff2</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 67: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff3</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 76: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff4</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 85: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff5</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 94: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff6</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 103: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">coeff7</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="HDLCompiler" num="1016" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v" Line 112: Port <arg fmt="%s" index="1">coeffaddress</arg> is not connected to this instance
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="warning" file="HDLCompiler" num="413" delta="old" >"/home/ise/ISE_shared/PSD_FIR_bank/impl/statefir.v" Line 117: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">58</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir1</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">67</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir2</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">76</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir3</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">85</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir4</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">94</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir5</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">103</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir6</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_32</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_33</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_34</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_35</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_36</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_37</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_38</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_39</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_40</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">calc_output_41</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">statefir</arg>&gt;.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/ISE_shared/PSD_FIR_bank/impl/filterbank.v</arg>&quot; line <arg fmt="%s" index="2">112</arg>: Output port &lt;<arg fmt="%s" index="3">coeffaddress</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">fir7</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 </messages>

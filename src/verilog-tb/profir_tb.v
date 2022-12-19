@@ -13,11 +13,18 @@ Basic testbench for the Profir module
 
 module profir_tb;
 
-parameter MAXSAMPLES          	= 1_000_000,
-		CLOCK_FREQUENCY       	= 250_000_000, // 1/250MHz = 4ns
-		CLOCK_PERIOD          	= 4,
-		INPUT_DATAFILE        	= "../simdata/datain.hex", // input data
-		OUTPUT_GOLDEN_DATAFILE	= "../simdata/dataout.hex";// expected output data
+parameter MAXSAMPLES          		= 1_000_000,
+		CLOCK_FREQUENCY       		= 250_000_000, // 1/250MHz = 4ns
+		CLOCK_PERIOD          		= 4,
+		INPUT_DATAFILE        		= "../simdata/datain.hex", // input data
+		OUTPUT_GOLDEN_DATAFILE_0	= "../simdata/dataout0.hex",// expected output data for filter 0
+		OUTPUT_GOLDEN_DATAFILE_1	= "../simdata/dataout1.hex",// expected output data for filter 1
+		OUTPUT_GOLDEN_DATAFILE_2	= "../simdata/dataout2.hex",// expected output data for filter 2
+		OUTPUT_GOLDEN_DATAFILE_3	= "../simdata/dataout3.hex",// expected output data for filter 3
+		OUTPUT_GOLDEN_DATAFILE_4	= "../simdata/dataout4.hex",// expected output data for filter 4
+		OUTPUT_GOLDEN_DATAFILE_5	= "../simdata/dataout5.hex",// expected output data for filter 5
+		OUTPUT_GOLDEN_DATAFILE_6	= "../simdata/dataout6.hex",// expected output data for filter 6
+		OUTPUT_GOLDEN_DATAFILE_7	= "../simdata/dataout7.hex";// expected output data for filter 7
 
 reg clock, reset;
 reg [15:0] datain;  // Input data to the for bank
@@ -32,11 +39,16 @@ wire [5:0] read_address;
 // The main outputs from the filter bank
 wire [15:0] dataout0, dataout1, dataout2, dataout3, dataout4, dataout5, dataout6, dataout7;
 
-// Load input and output data from files INPUT_DATAFILE and OUTPUT_GOLDEN_DATAFILE:
-// NOTE that the file with the expected output values is only generated
-// for filter 0 (output dataouto[15:0])
+// Load input and output data from files INPUT_DATAFILE and OUTPUT_GOLDEN_DATAFILE_<0-7>:
 reg [15:0] datainbuffer[0:MAXSAMPLES-1];
-reg [15:0] dataoutbuffer[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_0[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_1[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_2[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_3[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_4[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_5[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_6[0:MAXSAMPLES-1];
+reg [15:0] dataoutbuffer_7[0:MAXSAMPLES-1];
 integer i, Nsamples, Nsamplesout;
 
 initial
@@ -47,11 +59,61 @@ begin
 		Nsamples = i;
 	$display("Read %d samples from input file %s", Nsamples, INPUT_DATAFILE );
 
-	$readmemh( OUTPUT_GOLDEN_DATAFILE, dataoutbuffer );
+	// Load output filter 0
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_0, dataoutbuffer_0 );
 	for(i=0; i<MAXSAMPLES; i=i+1)
-		if ( dataoutbuffer[i] !== 16'dx )
+		if ( dataoutbuffer_0[i] !== 16'dx )
 		Nsamplesout = i;
-	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE );
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_0 );
+
+	// Load output filter 1
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_1, dataoutbuffer_1 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_1[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_1 );
+
+	// Load output filter 2
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_2, dataoutbuffer_2 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_2[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_2 );
+
+	// Load output filter 3
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_3, dataoutbuffer_3 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_3[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_3 );
+
+	// Load output filter 4
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_4, dataoutbuffer_4 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_4[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_4 );
+
+	// Load output filter 5
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_5, dataoutbuffer_5 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_5[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_5 );
+
+	// Load output filter 6
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_6, dataoutbuffer_6 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_6[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_6 );
+
+	// Load output filter 7
+	$readmemh( OUTPUT_GOLDEN_DATAFILE_7, dataoutbuffer_7 );
+	for(i=0; i<MAXSAMPLES; i=i+1)
+		if ( dataoutbuffer_7[i] !== 16'dx )
+		Nsamplesout = i;
+	$display("Read %d samples from output file %s", Nsamplesout, OUTPUT_GOLDEN_DATAFILE_7 );
 end
 
 // Initialize registers and variables, generate clock and reset:
@@ -63,16 +125,6 @@ begin
 	// Generate the master clock:
 	forever #(CLOCK_PERIOD/2) clock = ~clock;
 end
-
-/* Output a waveform for gtkwave
-this block must be commented before utilizing any
-other verilog synthesis application
-*/
-/* initial
-begin
-	$dumpfile("filterWaveforms.vcd");
-	$dumpvars(0, profir_tb);
-end */
 
 // generate the reset signal (note this is active low)
 // Activate reset_n for 10 clock cycles (100 ns)
@@ -122,19 +174,41 @@ integer Coutsamples = 0; // Adjust the start value for this index
 						// generated by your circuit
 						
 // register loaded with the expected output data						  
-reg signed [15:0] goldendataout;
+reg signed [15:0] goldendataout[7:0];
 
 reg failed = 0;
 integer mismatch = 0;
+integer match = 0;
 
 always @(posedge datain_en)
 begin
 
 	datain <= datainbuffer[Csamples];
+	
 	if ( Coutsamples >= 0 )
-		goldendataout <= dataoutbuffer[ Coutsamples ];
+	begin
+		goldendataout[0] <= dataoutbuffer_0[ Coutsamples ];
+		goldendataout[1] <= dataoutbuffer_1[ Coutsamples ];
+		goldendataout[2] <= dataoutbuffer_2[ Coutsamples ];
+		goldendataout[3] <= dataoutbuffer_3[ Coutsamples ];
+		goldendataout[4] <= dataoutbuffer_4[ Coutsamples ];
+		goldendataout[5] <= dataoutbuffer_5[ Coutsamples ];
+		goldendataout[6] <= dataoutbuffer_6[ Coutsamples ];
+		goldendataout[7] <= dataoutbuffer_7[ Coutsamples ];
+	end
+		
 	else
-		goldendataout <= 16'dx;  // set to unknown value
+	begin
+		goldendataout[0] <= 16'dx;  // set to unknown value
+		goldendataout[1] <= 16'dx;  // set to unknown value
+		goldendataout[2] <= 16'dx;  // set to unknown value
+		goldendataout[3] <= 16'dx;  // set to unknown value
+		goldendataout[4] <= 16'dx;  // set to unknown value
+		goldendataout[5] <= 16'dx;  // set to unknown value
+		goldendataout[6] <= 16'dx;  // set to unknown value
+		goldendataout[7] <= 16'dx;  // set to unknown value		
+	end
+
 	Coutsamples = Coutsamples + 1;
 	
 	if ( Csamples == Nsamples ) // end of the input sample vector
@@ -142,9 +216,10 @@ begin
 	begin
 
 		if(mismatch == 0)
-			$display("[TEST RESULT] Both vectors match!");
+			$display("[TEST RESULT] All %d samples match", match);
 		else
 			$display("[TEST RESULT] %d samples differ from expected!", mismatch);
+			
 		repeat(1000)			// wait more 1000 clocks and stop simulation
 		@(posedge clock);
 		$stop;
@@ -153,14 +228,68 @@ begin
 		Csamples <= Csamples + 1;
 		
 	// INSERT HERE YOUR VERIFICATION PROCESS TO COMPARE THE dataout<0-7> 
-	// OUTPUTS WITH THE EXPECTED OUTPUT DATA  
-	if(dataout0 !== goldendataout)
-		mismatch <= mismatch + 1;
+	// OUTPUTS WITH THE EXPECTED OUTPUT DATA
+	if(^goldendataout[0] !== 1'bX) // Check if any bit if X or Z
+		if(dataout0 !== goldendataout[0])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+	
+	if(^goldendataout[1] !== 1'bX) // Check if any bit if X or Z
+		if(dataout1 !== goldendataout[1])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;	
 
+	if(^goldendataout[2] !== 1'bX) // Check if any bit if X or Z
+		if(dataout2 !== goldendataout[2])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+
+	if(^goldendataout[3] !== 1'bX) // Check if any bit if X or Z
+		if(dataout3 !== goldendataout[3])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+
+	if(^goldendataout[4] !== 1'bX) // Check if any bit if X or Z
+		if(dataout4 !== goldendataout[4])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+
+	if(^goldendataout[5] !== 1'bX) // Check if any bit if X or Z
+		if(dataout5 !== goldendataout[5])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+	
+	if(^goldendataout[6] !== 1'bX) // Check if any bit if X or Z
+		if(dataout6 !== goldendataout[6])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
+	
+	if(^goldendataout[7] !== 1'bX) // Check if any bit if X or Z
+		if(dataout7 !== goldendataout[7])
+			mismatch <= mismatch + 1;
+		else
+			match <= match + 1;
 end
 
-	//--------------------------------------------------------------------------------
-	// Instantiate the memory bank:
+/* Output a waveform for gtkwave
+this block must be commented before utilizing any
+other verilog synthesis application
+*/
+/* initial
+begin
+	$dumpfile("filterWaveforms.vcd");
+	$dumpvars(0, profir_tb);
+end */
+
+//--------------------------------------------------------------------------------
+// Instantiate the memory bank:
 memory8bank  memory8bank_1(
 		.clock( clock ),		// Master clock, active in the posedge
 		.reset( reset ),		// Master reset, synch active high (clears output regs)
@@ -184,8 +313,8 @@ memory8bank  memory8bank_1(
 		.data7( data7 )
 );
 
-	//--------------------------------------------------------------------------------
-	// Instantiate the filter bank:
+//--------------------------------------------------------------------------------
+// Instantiate the filter bank:
 profir filter_bank_1(
 		.clock( clock ),		// Master 250 MHz clock, active in the rising edge
 		.reset( reset ),		// Master reset, synchronous, active high

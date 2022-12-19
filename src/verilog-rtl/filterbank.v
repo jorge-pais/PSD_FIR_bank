@@ -54,6 +54,16 @@ reg [6:0] countAddress = 0; // Extra black magic bit
 // 6 least significant bits
 assign coeffaddress = countAddress[5:0]; 
 
+wire signed [35:0] coefficient[7:0]; // Wire array for the coefficients
+assign coefficient[0] = coeff0;
+assign coefficient[1] = coeff1;
+assign coefficient[2] = coeff2;
+assign coefficient[3] = coeff3;
+assign coefficient[4] = coeff4;
+assign coefficient[5] = coeff5;
+assign coefficient[6] = coeff6;
+assign coefficient[7] = coeff7;
+
 reg signed [15:0] input_buffer [127:0]; // 128x1 array of 16 bit registers
 
 reg signed [15:0] output_buffer [7:0]; // 8x1 x 16bit
@@ -71,8 +81,8 @@ assign dataout7 = output_buffer[7];
 filter coefficients and the 16 bit samples of the filter we now that in 
 the worst case scenario, the resulting output after 128 clocks is 43 bits */
 reg signed [41:0] calc_output [7:0]; // 8x1 array of 42 bit registers
-reg signed [33:0] aux_calcA;
-reg signed [33:0] aux_calcB;
+reg signed [33:0] aux_calcA [7:0];
+reg signed [33:0] aux_calcB [7:0];
 
 /* Main input buffer multiplexer (128x2), where the input are
 grouped by the even and odd samples. */
@@ -149,27 +159,27 @@ begin
         end
         SET2:
         begin // Multiply the first values
-            aux_calcA <= sampleA * $signed(coeff0[17:0]);
-            aux_calcB <= sampleB * $signed(coeff0[35:18]);
+            for( i = 0; i < 8; i = i + 1)
+            begin
+                aux_calcA[i] <= sampleA * $signed(coefficient[i][17:0]);
+                aux_calcB[i] <= sampleB * $signed(coefficient[i][35:18]);
+            end
             countAddress <= 2;
         end
         RUN:
         begin
             /* We could do this with a single expression but then it would be
             required to do a wire array and to attach each coefficient input */
-            calc_output[0] = calc_output[0] + aux_calcA + aux_calcB;
-            calc_output[1] = calc_output[1] + aux_calcA + aux_calcB;
-            calc_output[2] = calc_output[2] + aux_calcA + aux_calcB;
-            calc_output[3] = calc_output[3] + aux_calcA + aux_calcB;
-            calc_output[4] = calc_output[4] + aux_calcA + aux_calcB;
-            calc_output[5] = calc_output[5] + aux_calcA + aux_calcB;
-            calc_output[6] = calc_output[6] + aux_calcA + aux_calcB;
-            calc_output[7] = calc_output[7] + aux_calcA + aux_calcB;
+            for(i = 0; i < 8; i = i + 1)
+            begin
+                calc_output[i] = calc_output[i] + aux_calcA[i] + aux_calcB[i];
 
-            aux_calcA <= sampleA * $signed(coeff0[17:0]); // Pipe line the slower multiplications
-            aux_calcB <= sampleB * $signed(coeff0[35:18]);
+                // Pipe line the slower multiplications
+                aux_calcA[i] <= sampleA * $signed(coefficient[i][17:0]);
+                aux_calcB[i] <= sampleB * $signed(coefficient[i][35:18]);
+            end
     
-            countAddress <= countAddress + 1;
+            countAddress <= {countAddress + 7'b1};
         end
         LOAD:
         begin

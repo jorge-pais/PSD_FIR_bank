@@ -54,7 +54,7 @@ statefir fir0(
     .coeff(coeff0),
     .dataout(dataout0)
 );
-/*
+
 statefir fir1(
     .clock(clock),
     .reset(reset),
@@ -117,6 +117,6 @@ statefir fir7(
     //.coeffaddress(coeffaddress),
     .coeff(coeff7),
     .dataout(dataout7)
-);*/
+);
 
 endmodule
