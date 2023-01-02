@@ -6,8 +6,6 @@ Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Max. CLK: 181.882MHz
 
----
-
 ## MAP: 
 Device Utilization:\
 Slice Registers: 16744 (6%)\
@@ -46,6 +44,8 @@ Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Max CLK: 181.882MHz
 
+---
+
 Optimization Goal: **Speed**\
 Optimization Effort: **fast**
 
@@ -53,6 +53,8 @@ Slice Registers: 16744 (6%)
 Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Max CLK: 71.053MHz
+
+---
 
 Optimization Goal: **Area**\
 Optimization Effort: **normal**
@@ -62,6 +64,8 @@ Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Max CLK: 181.882MHz
 
+---
+
 Optimization Goal: **Area**\
 Optimization Effort: **fast**
 
@@ -70,6 +74,8 @@ Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Maximum Frequency: 71.101MHz
 
+---
+
 Optimization Goal: **Area**\
 Optimization Effort: **high**
 
@@ -77,3 +83,10 @@ Slice Registers: 16616 (6%)
 Slice LUTs: 22408 (16%)\
 DSP48: 16 (2%)\
 Maximum Frequency: 181.882MHz
+
+MAP:
+SLICE REGISTERS: 16616
+SLICE LUTS: 13916
+
+Timing errors: 21835
+(Maximum frequency:  43.444MHz)

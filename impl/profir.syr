@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.03 secs
  
 --> 
 Reading design: profir.prj
@@ -83,7 +83,7 @@ Pack IO Registers into IOBs        : Auto
 Equivalent register Removal        : NO
 
 ---- General Options
-Optimization Goal                  : Speed
+Optimization Goal                  : Area
 Optimization Effort                : 2
 Power Reduction                    : NO
 Keep Hierarchy                     : No
@@ -254,6 +254,12 @@ Optimizing unit <statefir> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block profir, actual ratio is 23.
+FlipFlop fir0/countAddress_5 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop fir0/countAddress_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop fir0/countAddress_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop fir0/countAddress_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop fir0/countAddress_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop fir0/countAddress_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
@@ -261,8 +267,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 16744
- Flip-Flops                                            : 16744
+# Registers                                            : 16750
+ Flip-Flops                                            : 16750
 
 =========================================================================
 
@@ -287,15 +293,15 @@ Primitive and Black Box Usage:
 ------------------------------
 # BELS                             : 22410
 #      GND                         : 1
-#      LUT2                        : 367
-#      LUT3                        : 16545
+#      LUT2                        : 368
+#      LUT3                        : 16544
 #      LUT4                        : 40
 #      LUT5                        : 40
 #      LUT6                        : 5416
 #      VCC                         : 1
-# FlipFlops/Latches                : 16744
+# FlipFlops/Latches                : 16750
 #      FD                          : 24
-#      FDE                         : 16696
+#      FDE                         : 16702
 #      FDE_1                       : 24
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
@@ -312,20 +318,21 @@ Selected Device : 7a200tffg1156-1
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:           16744  out of  269200     6%  
+ Number of Slice Registers:           16616  out of  269200     6%  
  Number of Slice LUTs:                22408  out of  134600    16%  
     Number used as Logic:             22408  out of  134600    16%  
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:  22408
-   Number with an unused Flip Flop:    5664  out of  22408    25%  
+   Number with an unused Flip Flop:    5792  out of  22408    25%  
    Number with an unused LUT:             0  out of  22408     0%  
-   Number of fully used LUT-FF pairs: 16744  out of  22408    74%  
+   Number of fully used LUT-FF pairs: 16616  out of  22408    74%  
    Number of unique control sets:        41
 
 IO Utilization: 
  Number of IOs:                         441
  Number of bonded IOBs:                 441  out of    500    88%  
+    IOB Flip Flops/Latches:             134
 
 Specific Feature Utilization:
  Number of BUFG/BUFGCTRLs:                1  out of     32     3%  
@@ -352,7 +359,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clock                              | BUFGP                  | 16760 |
+clock                              | BUFGP                  | 16766 |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -365,7 +372,7 @@ Speed Grade: -1
 
    Minimum period: 5.498ns (Maximum Frequency: 181.882MHz)
    Minimum input arrival time before clock: 2.960ns
-   Maximum output required time after clock: 1.133ns
+   Maximum output required time after clock: 0.877ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -375,7 +382,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock'
   Clock period: 5.498ns (frequency: 181.882MHz)
-  Total number of paths / destination ports: 126264 / 34240
+  Total number of paths / destination ports: 126316 / 34252
 -------------------------------------------------------------------------
 Delay:               2.749ns (Levels of Logic = 2)
   Source:            fir7/nextState_1 (FF)
@@ -387,8 +394,8 @@ Delay:               2.749ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE_1:C->Q           29   0.484   0.688  fir7/nextState_1 (fir7/nextState_1)
-     LUT2:I0->O           44   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
+     FDE_1:C->Q           28   0.484   0.688  fir7/nextState_1 (fir7/nextState_1)
+     LUT2:I0->O           45   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
      LUT2:I0->O            2   0.124   0.405  fir7/Mmux__n01341241 (fir7/_n0146<26>)
      DSP48E1:C16               0.233          fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
     ----------------------------------------
@@ -397,19 +404,19 @@ Delay:               2.749ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 49983 / 34096
+  Total number of paths / destination ports: 49998 / 34108
 -------------------------------------------------------------------------
 Offset:              2.960ns (Levels of Logic = 3)
   Source:            reset (PAD)
-  Destination:       fir6/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
+  Destination:       fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT (DSP)
   Destination Clock: clock rising
 
-  Data Path: reset to fir6/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
+  Data Path: reset to fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O          16625   0.001   1.382  reset_IBUF (reset_IBUF)
-     LUT2:I1->O           44   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
+     IBUF:I->O          16624   0.001   1.382  reset_IBUF (reset_IBUF)
+     LUT2:I1->O           45   0.124   0.691  fir7/Mmux_nextState[2]_GND_2_o_mux_13_OUT21 (fir7/nextState[2]_GND_2_o_mux_13_OUT<1>)
      LUT2:I0->O            2   0.124   0.405  fir7/Mmux__n01341241 (fir7/_n0146<26>)
      DSP48E1:C16               0.233          fir7/Maddsub_sampleA[15]_coeff[17]_MuLt_14_OUT
     ----------------------------------------
@@ -420,20 +427,20 @@ Offset:              2.960ns (Levels of Logic = 3)
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
   Total number of paths / destination ports: 134 / 134
 -------------------------------------------------------------------------
-Offset:              1.133ns (Levels of Logic = 1)
-  Source:            fir0/countAddress_1 (FF)
-  Destination:       coeffaddress<1> (PAD)
+Offset:              0.877ns (Levels of Logic = 1)
+  Source:            fir0/countAddress_5_1 (FF)
+  Destination:       coeffaddress<5> (PAD)
   Source Clock:      clock rising
 
-  Data Path: fir0/countAddress_1 to coeffaddress<1>
+  Data Path: fir0/countAddress_5_1 to coeffaddress<5>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q            519   0.478   0.655  fir0/countAddress_1 (fir0/countAddress_1)
-     OBUF:I->O                 0.000          coeffaddress_1_OBUF (coeffaddress<1>)
+     FDE:C->Q              1   0.478   0.399  fir0/countAddress_5_1 (fir0/countAddress_5_1)
+     OBUF:I->O                 0.000          coeffaddress_5_OBUF (coeffaddress<5>)
     ----------------------------------------
-    Total                      1.133ns (0.478ns logic, 0.655ns route)
-                                       (42.2% logic, 57.8% route)
+    Total                      0.877ns (0.478ns logic, 0.399ns route)
+                                       (54.5% logic, 45.5% route)
 
 =========================================================================
 
@@ -451,13 +458,13 @@ clock          |    5.146|    7.267|    2.544|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 83.00 secs
-Total CPU time to Xst completion: 79.04 secs
+Total REAL time to Xst completion: 58.00 secs
+Total CPU time to Xst completion: 55.83 secs
  
 --> 
 
 
-Total memory usage is 730476 kilobytes
+Total memory usage is 729988 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    8 (   0 filtered)

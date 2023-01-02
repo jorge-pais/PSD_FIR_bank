@@ -22,19 +22,37 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="psdlab3.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+    <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/trce.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="profir.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="profir.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="profir.lso"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGC" xil_pn:name="profir.ngc"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGD" xil_pn:name="profir.ngd"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PCF" xil_pn:name="profir.pcf" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="profir.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_STX" xil_pn:name="profir.stx"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_REPORT" xil_pn:name="profir.syr"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="profir.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="profir_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="profir_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="profir_map.map" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="profir_map.mrp" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="profir_map.ncd" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGM" xil_pn:name="profir_map.ngm" xil_pn:subbranch="Map"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="profir_map.xrpt"/>
+    <file xil_pn:fileType="FILE_XRPT" xil_pn:name="profir_ngdbuild.xrpt"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_TXT_REPORT" xil_pn:name="profir_preroute.twr" xil_pn:subbranch="Map"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_TIMING_XML_REPORT" xil_pn:name="profir_preroute.twx" xil_pn:subbranch="Map"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="profir_summary.html"/>
+    <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="profir_summary.xml"/>
+    <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="profir_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="profir_xst.xrpt"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xlnx_auto_0_xdb"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
@@ -63,7 +81,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1671464796" xil_pn:in_ck="567568674981643180" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="1177460145078450499" xil_pn:start_ts="1671464709">
+    <transform xil_pn:end_ts="1671482923" xil_pn:in_ck="567568674981643180" xil_pn:name="TRANEXT_xstsynthesize_virtex6" xil_pn:prop_ck="-3834312500180824693" xil_pn:start_ts="1671482862">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>
@@ -77,6 +95,40 @@
       <outfile xil_pn:name="profir_xst.xrpt"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
+    </transform>
+    <transform xil_pn:end_ts="1671482928" xil_pn:in_ck="-5004964852688507481" xil_pn:name="TRAN_compileBCD2" xil_pn:prop_ck="5069202361896132308" xil_pn:start_ts="1671482927">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1671482964" xil_pn:in_ck="-1735667524730147777" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="-6890482691508118935" xil_pn:start_ts="1671482928">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_ngo"/>
+      <outfile xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
+      <outfile xil_pn:name="profir.bld"/>
+      <outfile xil_pn:name="profir.ngd"/>
+      <outfile xil_pn:name="profir_ngdbuild.xrpt"/>
+    </transform>
+    <transform xil_pn:end_ts="1671483525" xil_pn:in_ck="-1735667524730147776" xil_pn:name="TRANEXT_map_virtex7" xil_pn:prop_ck="-1887947855611129194" xil_pn:start_ts="1671482992">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="WarningsGenerated"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/map.xmsgs"/>
+      <outfile xil_pn:name="profir.pcf"/>
+      <outfile xil_pn:name="profir_map.map"/>
+      <outfile xil_pn:name="profir_map.mrp"/>
+      <outfile xil_pn:name="profir_map.ncd"/>
+      <outfile xil_pn:name="profir_map.ngm"/>
+      <outfile xil_pn:name="profir_map.xrpt"/>
+      <outfile xil_pn:name="profir_summary.xml"/>
+      <outfile xil_pn:name="profir_usage.xml"/>
+    </transform>
+    <transform xil_pn:end_ts="1671483993" xil_pn:in_ck="-3075872608179709095" xil_pn:name="TRAN_preRouteTrce" xil_pn:prop_ck="722859607460791351" xil_pn:start_ts="1671483963">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="_xmsgs/trce.xmsgs"/>
+      <outfile xil_pn:name="profir_preroute.twr"/>
+      <outfile xil_pn:name="profir_preroute.twx"/>
     </transform>
   </transforms>
 
